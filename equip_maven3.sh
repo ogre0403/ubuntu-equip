@@ -31,6 +31,9 @@ tar -zxvf $FILENAME -C maven --strip-components 1
 # Will copy to /opt
 sudo mv maven /opt/
 
+# set PATH env variable 
+grep '/opt/maven/bin' /etc/profile || echo 'PATH=$PATH:/opt/maven/bin' >> /etc/profile
+
 # Cleanup
 rm -f $FILENAME
 rm -f equip_maven3.sh
